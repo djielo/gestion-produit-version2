@@ -35,12 +35,12 @@ public class ProduitController {
         return  produitService.UpdateProduit (produit);
     }
 
-    @GetMapping(value = "/find")
+    @GetMapping(value = "produits/find")
     public Produit searchProduit(@RequestParam ("nom") String nom, @RequestParam("prix") double prix){
         return produitService.searchProduit (nom, prix);
     }
 
-    @GetMapping(value = "/search/")
+    @GetMapping(value = "produits/search/")
     public List<Produit> seachProduitsById(@RequestParam("prix") double prix){
         return produitService.searchProduitByPrix (prix);
     }
