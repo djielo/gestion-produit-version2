@@ -41,7 +41,7 @@ public class ProduitController {
     }
 
     @GetMapping(value = "produits/search/")
-    public List<Produit> seachProduitsById(@RequestParam("prix") double prix){
+    public List<Produit> seachProduitsByPrice (@RequestParam("prix") double prix){
         return produitService.searchProduitByPrix (prix);
     }
 }
