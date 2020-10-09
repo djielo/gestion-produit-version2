@@ -33,12 +33,12 @@ public class ProduitServiceImpl implements ProduitService {
     }
 
     @Override
-    public Produit searchProduit(String nom, double prix) {
+    public List<Produit> searchProduit(String nom, double prix) {
         return produitRepository.searchProduit(nom,prix);
     }
 
     @Override
     public List<Produit> searchProduitByPrix(double prix) {
-        return produitRepository.findAll ();
+        return produitRepository.searchProduitByPrix (prix);
     }
 }

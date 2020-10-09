@@ -10,9 +10,9 @@ import java.util.List;
 public interface ProduitRepository extends JpaRepository<Produit, Integer> {
 
     @Query(value = "select p from Produit p where p.nom = :nom and p.prix = :prix")
-    Produit searchProduit(@Param ("nom") String nom, @Param ("prix") double prix);
+    List<Produit> searchProduit(@Param ("nom") String nom, @Param ("prix") double prix);
 
     @Query(value = "select p from Produit p where p.prix = :prix")
-    Produit searchProduit( @Param ("prix") double prix);
+    List<Produit> searchProduitByPrix( @Param ("prix") double prix);
 
 }
